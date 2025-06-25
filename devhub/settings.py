@@ -1,11 +1,18 @@
 from pathlib import Path
+import environ
+import os
+
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-xmb_g6z#v3d!#(+ofeohx3xs$p7+vr7&zt7qy5h*2)mn3fd(b1'
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = True
-
-ALLOWED_HOSTS = ['192.168.27.170']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
 # Application definition
