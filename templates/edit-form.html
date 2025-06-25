@@ -1,0 +1,33 @@
+{% extends 'header/header.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<br>
+    <div class="auth">
+      <div class="card">
+        <div class="auth__header text-center">
+          <h3>{{page_name}}</h3>
+          <!-- <p>Create a new developer account</p> -->
+        </div>
+
+        <form class="form auth__form" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <!-- Input:Text -->
+          <div class="form__field">
+            
+            {% for field in form %}          
+              {{field.label_tag}}
+              {{field|add_class:"input input--text"}}
+              {{field.errors}}        
+            {% endfor %}
+              
+          </div>
+
+          <div class="auth__actions">
+            <input class="btn btn--sub btn--lg" type="submit" value="Update" />
+          </div>
+        </form>
+      </div>
+    </div>
+{% endblock %}
