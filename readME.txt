@@ -48,6 +48,6 @@ Other Tools: Django widget-tweaks, django eviron (to secure sensitive datat)...
 Real-time messaging using WebSockets (Django-channels, redis)
 Project bookmarks / likes
 Notification system (new reviews, total weekly project views , messages, follows)
-adding other technologies for project enhancment and automation purposes e.g (docker, celery, redis, reactJs, aws hosting, REST API ..)
+adding other technologies for project enhancement and automation purposes e.g (docker, celery, redis, reactJs, aws hosting, REST API ..)
 
 LIVE LINK: https://devhubb.pythonanywhere.com/
